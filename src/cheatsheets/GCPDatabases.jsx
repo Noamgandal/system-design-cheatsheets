@@ -313,13 +313,13 @@ function DBCard({ db, isExpanded, onToggle }) {
       >
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4, flexWrap: "wrap" }}>
-            <span style={{ fontSize: 17, fontWeight: 700, color: "#e2e8f0", fontFamily: "'JetBrains Mono', monospace" }}>
+            <span style={{ fontSize: 18, fontWeight: 700, color: "#e2e8f0", fontFamily: "'JetBrains Mono', monospace" }}>
               {db.name}
             </span>
             <span
               style={{
-                fontSize: 10,
-                padding: "2px 6px",
+                fontSize: 12,
+                padding: "3px 8px",
                 borderRadius: 4,
                 background: "#2a2a4a",
                 color: "#94a3b8",
@@ -330,10 +330,10 @@ function DBCard({ db, isExpanded, onToggle }) {
               {db.type}
             </span>
           </div>
-          <div style={{ fontSize: 12, color: "#64748b", fontStyle: "italic" }}>{db.tagline}</div>
+          <div style={{ fontSize: 14, color: "#64748b", fontStyle: "italic" }}>{db.tagline}</div>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
-          <div style={{ textAlign: "right", fontSize: 11 }}>
+          <div style={{ textAlign: "right", fontSize: 13 }}>
             <div>
               <span style={{ color: "#64748b" }}>R: </span>
               <span style={{ color: latencyColor(db.latency.read), fontFamily: "'JetBrains Mono', monospace", fontWeight: 600 }}>
@@ -373,11 +373,11 @@ function DBCard({ db, isExpanded, onToggle }) {
               ["SLA", db.sla],
               ["Cost", db.cost],
             ].map(([label, value]) => (
-              <div key={label} style={{ background: "#0f0f23", borderRadius: 6, padding: "8px 10px" }}>
-                <div style={{ fontSize: 9, color: "#64748b", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 3 }}>
+              <div key={label} style={{ background: "#0f0f23", borderRadius: 6, padding: "10px 12px" }}>
+                <div style={{ fontSize: 11, color: "#64748b", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 4 }}>
                   {label}
                 </div>
-                <div style={{ fontSize: 12, color: "#cbd5e1", lineHeight: 1.4 }}>{value}</div>
+                <div style={{ fontSize: 14, color: "#cbd5e1", lineHeight: 1.4 }}>{value}</div>
               </div>
             ))}
           </div>
@@ -385,21 +385,21 @@ function DBCard({ db, isExpanded, onToggle }) {
           {/* Best for / Not for */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 12, marginBottom: 16 }}>
             <div>
-              <div style={{ fontSize: 11, fontWeight: 700, color: "#22c55e", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>
+              <div style={{ fontSize: 13, fontWeight: 700, color: "#22c55e", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>
                 ✓ Best for
               </div>
               {db.bestFor.map((item, i) => (
-                <div key={i} style={{ fontSize: 12, color: "#94a3b8", marginBottom: 3, paddingLeft: 6 }}>
+                <div key={i} style={{ fontSize: 14, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>
                   • {item}
                 </div>
               ))}
             </div>
             <div>
-              <div style={{ fontSize: 11, fontWeight: 700, color: "#ef4444", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>
+              <div style={{ fontSize: 13, fontWeight: 700, color: "#ef4444", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>
                 ✗ Not for
               </div>
               {db.notFor.map((item, i) => (
-                <div key={i} style={{ fontSize: 12, color: "#94a3b8", marginBottom: 3, paddingLeft: 6 }}>
+                <div key={i} style={{ fontSize: 14, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>
                   • {item}
                 </div>
               ))}
@@ -407,11 +407,11 @@ function DBCard({ db, isExpanded, onToggle }) {
           </div>
 
           {/* Key Design */}
-          <div style={{ background: "#0f0f23", borderRadius: 6, padding: "10px 12px", marginBottom: 12 }}>
-            <div style={{ fontSize: 10, fontWeight: 700, color: "#fbbf24", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 4 }}>
+          <div style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px", marginBottom: 12 }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: "#fbbf24", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
               🔑 Key / Schema Design
             </div>
-            <div style={{ fontSize: 12, color: "#cbd5e1", lineHeight: 1.5 }}>{db.keyDesign}</div>
+            <div style={{ fontSize: 14, color: "#cbd5e1", lineHeight: 1.5 }}>{db.keyDesign}</div>
           </div>
 
           {/* Row Example */}
@@ -465,23 +465,23 @@ function DBCard({ db, isExpanded, onToggle }) {
           </div>
 
           {/* Gotchas */}
-          <div style={{ background: "#1c0f0f", borderRadius: 6, padding: "10px 12px", marginBottom: 12, border: "1px solid #3b1515" }}>
-            <div style={{ fontSize: 10, fontWeight: 700, color: "#f87171", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 4 }}>
+          <div style={{ background: "#1c0f0f", borderRadius: 6, padding: "12px 14px", marginBottom: 12, border: "1px solid #3b1515" }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: "#f87171", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
               ⚠️ Gotchas & Pitfalls
             </div>
             {db.gotchas.map((item, i) => (
-              <div key={i} style={{ fontSize: 12, color: "#fca5a5", marginBottom: 2 }}>
+              <div key={i} style={{ fontSize: 14, color: "#fca5a5", marginBottom: 4 }}>
                 • {item}
               </div>
             ))}
           </div>
 
           {/* Interview Tip */}
-          <div style={{ background: "#0f1c0f", borderRadius: 6, padding: "10px 12px", border: "1px solid #153b15" }}>
-            <div style={{ fontSize: 10, fontWeight: 700, color: "#22c55e", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 4 }}>
+          <div style={{ background: "#0f1c0f", borderRadius: 6, padding: "12px 14px", border: "1px solid #153b15" }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: "#22c55e", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
               🎯 Interview Trigger
             </div>
-            <div style={{ fontSize: 12, color: "#86efac", lineHeight: 1.5, fontStyle: "italic" }}>{db.interviewTip}</div>
+            <div style={{ fontSize: 14, color: "#86efac", lineHeight: 1.5, fontStyle: "italic" }}>{db.interviewTip}</div>
           </div>
         </div>
       )}
@@ -558,9 +558,9 @@ export default function GCPDatabaseCheatSheet() {
                     display: "flex",
                     flexWrap: "wrap",
                     gap: 8,
-                    padding: "8px 0",
+                    padding: "10px 0",
                     borderBottom: i < decisionTree.length - 1 ? "1px solid #1a1a3e" : "none",
-                    fontSize: 13,
+                    fontSize: 15,
                   }}
                 >
                   <span style={{ color: "#94a3b8", flex: "1 1 200px", minWidth: 0 }}>{item.question}</span>

@@ -3,6 +3,7 @@ import Messaging from "./Messaging";
 import Caching from "./Caching";
 import Networking from "./Networking";
 import Consistency from "./Consistency";
+import APIDesign from "./APIDesign";
 
 export const cheatsheets = [
   {
@@ -29,5 +30,10 @@ export const cheatsheets = [
     id: "consistency",
     label: "Consistency",
     component: Consistency,
+  },
+  {
+    id: "api-design",
+    label: "API Design",
+    component: APIDesign,
   },
 ];

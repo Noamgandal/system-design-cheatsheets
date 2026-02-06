@@ -4,6 +4,7 @@ import Caching from "./Caching";
 import Networking from "./Networking";
 import Consistency from "./Consistency";
 import APIDesign from "./APIDesign";
+import Reliability from "./Reliability";
 
 export const cheatsheets = [
   {
@@ -35,5 +36,10 @@ export const cheatsheets = [
     id: "api-design",
     label: "API Design",
     component: APIDesign,
+  },
+  {
+    id: "reliability",
+    label: "Reliability & Ops",
+    component: Reliability,
   },
 ];

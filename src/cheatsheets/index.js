@@ -1,5 +1,6 @@
 import GCPDatabases from "./GCPDatabases";
 import Messaging from "./Messaging";
+import Caching from "./Caching";
 
 export const cheatsheets = [
   {
@@ -9,7 +10,12 @@ export const cheatsheets = [
   },
   {
     id: "messaging",
-    label: "Messaging & Queues",
+    label: "Messaging",
     component: Messaging,
+  },
+  {
+    id: "caching",
+    label: "Caching",
+    component: Caching,
   },
 ];

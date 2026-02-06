@@ -331,15 +331,15 @@ function ExpandableCard({ item }) {
     >
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
         <div style={{ flex: 1 }}>
-          <span style={{ color: "#a78bfa", fontWeight: 700, fontSize: 17, fontFamily: "'JetBrains Mono', monospace" }}>
+          <span style={{ color: "#a78bfa", fontWeight: 700, fontSize: 20, fontFamily: "'JetBrains Mono', monospace" }}>
             {item.term}
           </span>
-          <p style={{ color: "#c8c8e0", fontSize: 17, margin: "6px 0 0 0", lineHeight: 1.7 }}>
+          <p style={{ color: "#d1d5db", fontSize: 19, margin: "6px 0 0 0", lineHeight: 1.7 }}>
             {item.detail}
           </p>
         </div>
         {hasExtra && (
-          <span style={{ color: "#555", fontSize: 14, marginLeft: 8, flexShrink: 0 }}>
+          <span style={{ color: "#6b7280", fontSize: 16, marginLeft: 8, flexShrink: 0 }}>
             {open ? "▼" : "▶"}
           </span>
         )}
@@ -348,14 +348,14 @@ function ExpandableCard({ item }) {
         <div style={{ marginTop: 10, paddingTop: 10, borderTop: "1px solid #252540" }}>
           {item.usage && (
             <div style={{ marginBottom: 6 }}>
-              <span style={{ color: "#4ade80", fontSize: 14, fontWeight: 600, textTransform: "uppercase", letterSpacing: 1 }}>When / Why</span>
-              <p style={{ color: "#a0a0c0", fontSize: 17, margin: "4px 0 0 0", lineHeight: 1.7 }}>{item.usage}</p>
+              <span style={{ color: "#4ade80", fontSize: 16, fontWeight: 600, textTransform: "uppercase", letterSpacing: 1 }}>When / Why</span>
+              <p style={{ color: "#d1d5db", fontSize: 19, margin: "4px 0 0 0", lineHeight: 1.7 }}>{item.usage}</p>
             </div>
           )}
           {item.gotcha && (
             <div>
-              <span style={{ color: "#fbbf24", fontSize: 14, fontWeight: 600, textTransform: "uppercase", letterSpacing: 1 }}>Gotcha / Interview Tip</span>
-              <p style={{ color: "#a0a0c0", fontSize: 17, margin: "4px 0 0 0", lineHeight: 1.7 }}>{item.gotcha}</p>
+              <span style={{ color: "#fbbf24", fontSize: 16, fontWeight: 600, textTransform: "uppercase", letterSpacing: 1 }}>Gotcha / Interview Tip</span>
+              <p style={{ color: "#d1d5db", fontSize: 19, margin: "4px 0 0 0", lineHeight: 1.7 }}>{item.gotcha}</p>
             </div>
           )}
         </div>
@@ -372,13 +372,13 @@ export default function ConsistencyCheatsheet() {
     <div style={{
       minHeight: "100vh",
       background: "#0a0a14",
-      color: "#e0e0f0",
+      color: "#f1f5f9",
       fontFamily: "'Inter', -apple-system, sans-serif",
       padding: "20px 16px",
     }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <h1 style={{
-          fontSize: 26,
+          fontSize: 28,
           fontWeight: 800,
           color: "#fff",
           margin: "0 0 4px 0",
@@ -386,7 +386,7 @@ export default function ConsistencyCheatsheet() {
         }}>
           🔒 Consistency & Coordination
         </h1>
-        <p style={{ color: "#666", fontSize: 16, margin: "0 0 20px 0" }}>
+        <p style={{ color: "#9ca3af", fontSize: 18, margin: "0 0 20px 0" }}>
           Google L6 System Design — CAP, Consensus, Locking, Leader Election, Interview Patterns
         </p>
 
@@ -404,11 +404,11 @@ export default function ConsistencyCheatsheet() {
               onClick={() => setActiveSection(s.id)}
               style={{
                 background: activeSection === s.id ? "#1a1a30" : "transparent",
-                color: activeSection === s.id ? "#a78bfa" : "#666",
+                color: activeSection === s.id ? "#a78bfa" : "#9ca3af",
                 border: activeSection === s.id ? "1px solid #a78bfa33" : "1px solid transparent",
                 borderRadius: 6,
                 padding: "10px 16px",
-                fontSize: 15,
+                fontSize: 17,
                 fontWeight: 600,
                 cursor: "pointer",
                 transition: "all 0.2s",
@@ -423,9 +423,9 @@ export default function ConsistencyCheatsheet() {
         {current && current.subsections.map((sub, i) => (
           <div key={i} style={{ marginBottom: 28 }}>
             <h3 style={{
-              fontSize: 19,
+              fontSize: 22,
               fontWeight: 700,
-              color: "#7878a0",
+              color: "#9ca3af",
               margin: "0 0 12px 0",
               textTransform: "uppercase",
               letterSpacing: 1.5,

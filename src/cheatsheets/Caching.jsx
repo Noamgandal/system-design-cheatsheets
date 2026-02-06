@@ -184,36 +184,36 @@ function StrategyCard({ s, isExpanded, onToggle }) {
     <div style={{ background: "#1a1a2e", borderRadius: 10, border: "1px solid #2a2a4a", marginBottom: 12, overflow: "hidden" }}>
       <div onClick={onToggle} style={{ padding: "12px 14px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10, borderBottom: isExpanded ? "1px solid #2a2a4a" : "none" }}>
         <div style={{ flex: 1, minWidth: 0 }}>
-          <span style={{ fontSize: 18, fontWeight: 700, color: "#e2e8f0", fontFamily: "'JetBrains Mono', monospace" }}>{s.name}</span>
-          <div style={{ fontSize: 14, color: "#64748b", fontStyle: "italic", marginTop: 4 }}>{s.tagline}</div>
+          <span style={{ fontSize: 20, fontWeight: 700, color: "#f1f5f9", fontFamily: "'JetBrains Mono', monospace" }}>{s.name}</span>
+          <div style={{ fontSize: 16, color: "#9ca3af", fontStyle: "italic", marginTop: 4 }}>{s.tagline}</div>
         </div>
-        <span style={{ color: "#64748b", fontSize: 14, transform: isExpanded ? "rotate(180deg)" : "", transition: "transform 0.2s", flexShrink: 0 }}>▼</span>
+        <span style={{ color: "#9ca3af", fontSize: 16, transform: isExpanded ? "rotate(180deg)" : "", transition: "transform 0.2s", flexShrink: 0 }}>▼</span>
       </div>
       {isExpanded && (
         <div style={{ padding: "12px 14px" }}>
           <div style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px", marginBottom: 12 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: "#818cf8", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 8 }}>Flow</div>
+            <div style={{ fontSize: 14, fontWeight: 700, color: "#818cf8", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 8 }}>Flow</div>
             {s.flow.map((step, i) => (
-              <div key={i} style={{ fontSize: 14, color: step.startsWith("READ") || step.startsWith("WRITE") ? "#fbbf24" : "#cbd5e1", marginBottom: 6, fontFamily: step.startsWith("READ") || step.startsWith("WRITE") ? "'JetBrains Mono', monospace" : "inherit", fontWeight: step.startsWith("READ") || step.startsWith("WRITE") ? 700 : 400 }}>{step}</div>
+              <div key={i} style={{ fontSize: 17, color: step.startsWith("READ") || step.startsWith("WRITE") ? "#fbbf24" : "#d1d5db", marginBottom: 6, fontFamily: step.startsWith("READ") || step.startsWith("WRITE") ? "'JetBrains Mono', monospace" : "inherit", fontWeight: step.startsWith("READ") || step.startsWith("WRITE") ? 700 : 400 }}>{step}</div>
             ))}
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 12, marginBottom: 12 }}>
             <div>
-              <div style={{ fontSize: 13, fontWeight: 700, color: "#22c55e", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>✓ Pros</div>
-              {s.pros.map((p, i) => <div key={i} style={{ fontSize: 16, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>• {p}</div>)}
+              <div style={{ fontSize: 14, fontWeight: 700, color: "#22c55e", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>✓ Pros</div>
+              {s.pros.map((p, i) => <div key={i} style={{ fontSize: 19, color: "#d1d5db", marginBottom: 4, paddingLeft: 6 }}>• {p}</div>)}
             </div>
             <div>
-              <div style={{ fontSize: 13, fontWeight: 700, color: "#ef4444", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>✗ Cons</div>
-              {s.cons.map((c, i) => <div key={i} style={{ fontSize: 16, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>• {c}</div>)}
+              <div style={{ fontSize: 14, fontWeight: 700, color: "#ef4444", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>✗ Cons</div>
+              {s.cons.map((c, i) => <div key={i} style={{ fontSize: 19, color: "#d1d5db", marginBottom: 4, paddingLeft: 6 }}>• {c}</div>)}
             </div>
           </div>
           <div style={{ background: "#0f1c0f", borderRadius: 6, padding: "12px 14px", border: "1px solid #153b15", marginBottom: 12 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: "#22c55e", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>🎯 Best For</div>
-            <div style={{ fontSize: 16, color: "#86efac", lineHeight: 1.6 }}>{s.bestFor}</div>
+            <div style={{ fontSize: 14, fontWeight: 700, color: "#22c55e", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>🎯 Best For</div>
+            <div style={{ fontSize: 19, color: "#86efac", lineHeight: 1.6 }}>{s.bestFor}</div>
           </div>
           <div style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px" }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: "#fbbf24", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>Example</div>
-            <div style={{ fontSize: 16, color: "#cbd5e1", lineHeight: 1.6 }}>{s.example}</div>
+            <div style={{ fontSize: 14, fontWeight: 700, color: "#fbbf24", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>Example</div>
+            <div style={{ fontSize: 19, color: "#d1d5db", lineHeight: 1.6 }}>{s.example}</div>
           </div>
         </div>
       )}
@@ -226,20 +226,20 @@ function StampedeCard({ problem, isExpanded, onToggle }) {
     <div style={{ background: "#1a1a2e", borderRadius: 10, border: "1px solid #3b1515", marginBottom: 12, overflow: "hidden" }}>
       <div onClick={onToggle} style={{ padding: "12px 14px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10, borderBottom: isExpanded ? "1px solid #2a2a4a" : "none" }}>
         <div style={{ flex: 1, minWidth: 0 }}>
-          <span style={{ fontSize: 17, fontWeight: 700, color: "#fca5a5", fontFamily: "'JetBrains Mono', monospace" }}>⚠️ {problem.name}</span>
-          <div style={{ fontSize: 14, color: "#94a3b8", marginTop: 4 }}>{problem.description}</div>
-          <div style={{ fontSize: 12, color: "#64748b", marginTop: 4 }}>Also called: {problem.alsoCalledAs}</div>
+          <span style={{ fontSize: 20, fontWeight: 700, color: "#fca5a5", fontFamily: "'JetBrains Mono', monospace" }}>⚠️ {problem.name}</span>
+          <div style={{ fontSize: 17, color: "#d1d5db", marginTop: 4 }}>{problem.description}</div>
+          <div style={{ fontSize: 14, color: "#9ca3af", marginTop: 4 }}>Also called: {problem.alsoCalledAs}</div>
         </div>
-        <span style={{ color: "#64748b", fontSize: 14, transform: isExpanded ? "rotate(180deg)" : "", transition: "transform 0.2s", flexShrink: 0 }}>▼</span>
+        <span style={{ color: "#9ca3af", fontSize: 16, transform: isExpanded ? "rotate(180deg)" : "", transition: "transform 0.2s", flexShrink: 0 }}>▼</span>
       </div>
       {isExpanded && (
         <div style={{ padding: "12px 14px" }}>
           {problem.solutions.map((sol, i) => (
             <div key={i} style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px", marginBottom: i < problem.solutions.length - 1 ? 12 : 0 }}>
-              <div style={{ fontSize: 17, fontWeight: 700, color: "#22c55e", marginBottom: 8 }}>{sol.name}</div>
-              <div style={{ fontSize: 14, color: "#cbd5e1", marginBottom: 10, lineHeight: 1.5 }}>{sol.how}</div>
-              <div style={{ background: "#1a1a2e", borderRadius: 6, padding: 12, marginBottom: 10, fontFamily: "'JetBrains Mono', monospace", fontSize: 13, color: "#94a3b8", whiteSpace: "pre-wrap", lineHeight: 1.6, overflowX: "auto", WebkitOverflowScrolling: "touch" }}>{sol.flow}</div>
-              <div style={{ fontSize: 14, color: "#fbbf24" }}><strong>When:</strong> {sol.when}</div>
+              <div style={{ fontSize: 20, fontWeight: 700, color: "#22c55e", marginBottom: 8 }}>{sol.name}</div>
+              <div style={{ fontSize: 17, color: "#d1d5db", marginBottom: 10, lineHeight: 1.5 }}>{sol.how}</div>
+              <div style={{ background: "#1a1a2e", borderRadius: 6, padding: 12, marginBottom: 10, fontFamily: "'JetBrains Mono', monospace", fontSize: 15, color: "#d1d5db", whiteSpace: "pre-wrap", lineHeight: 1.6, overflowX: "auto", WebkitOverflowScrolling: "touch" }}>{sol.flow}</div>
+              <div style={{ fontSize: 17, color: "#fbbf24" }}><strong>When:</strong> {sol.when}</div>
             </div>
           ))}
         </div>
@@ -261,34 +261,34 @@ export default function CachingCheatSheet() {
   const collapseAll = (setter) => () => setter(new Set());
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0f0f23", color: "#e2e8f0", fontFamily: "'Segoe UI', system-ui, sans-serif", padding: "16px 12px" }}>
+    <div style={{ minHeight: "100vh", background: "#0f0f23", color: "#f1f5f9", fontFamily: "'Segoe UI', system-ui, sans-serif", padding: "16px 12px" }}>
       <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
-        <h1 style={{ fontSize: "clamp(20px, 5vw, 28px)", fontWeight: 800, marginBottom: 4, fontFamily: "'JetBrains Mono', monospace" }}>Caching Patterns Cheat Sheet</h1>
-        <p style={{ color: "#64748b", fontSize: 14, marginBottom: 16 }}>System Design Interview Reference — Google L6</p>
+        <h1 style={{ fontSize: "clamp(22px, 5vw, 28px)", fontWeight: 800, marginBottom: 4, fontFamily: "'JetBrains Mono', monospace" }}>Caching Patterns Cheat Sheet</h1>
+        <p style={{ color: "#9ca3af", fontSize: 18, marginBottom: 16 }}>System Design Interview Reference — Google L6</p>
 
         {/* Caching Layers */}
         <div style={{ background: "#1a1a2e", borderRadius: 10, border: "1px solid #2a2a4a", marginBottom: 20, overflow: "hidden" }}>
           <div onClick={() => setShowLayers(!showLayers)} style={{ padding: "12px 16px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <span style={{ fontWeight: 700, fontSize: 15, color: "#fbbf24" }}>🏗️ Cache Layers</span>
-            <span style={{ color: "#64748b", transform: showLayers ? "rotate(180deg)" : "", transition: "transform 0.2s" }}>▼</span>
+            <span style={{ fontWeight: 700, fontSize: 17, color: "#fbbf24" }}>🏗️ Cache Layers</span>
+            <span style={{ color: "#9ca3af", transform: showLayers ? "rotate(180deg)" : "", transition: "transform 0.2s" }}>▼</span>
           </div>
           {showLayers && (
             <div style={{ padding: "0 16px 14px" }}>
-              <div style={{ background: "#0f0f23", borderRadius: 6, padding: 12, marginBottom: 14, fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#818cf8", textAlign: "center", lineHeight: 1.8, overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
+              <div style={{ background: "#0f0f23", borderRadius: 6, padding: 12, marginBottom: 14, fontFamily: "'JetBrains Mono', monospace", fontSize: 14, color: "#818cf8", textAlign: "center", lineHeight: 1.8, overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
                 Client → CDN → API GW → App [in-process] → Redis → DB
               </div>
               {layers.map((l, i) => (
                 <div key={i} style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px", marginBottom: i < layers.length - 1 ? 10 : 0 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6, flexWrap: "wrap", gap: 8 }}>
-                    <span style={{ fontSize: 17, fontWeight: 700, color: "#e2e8f0", fontFamily: "'JetBrains Mono', monospace" }}>{l.name}</span>
-                    <span style={{ fontSize: 13, color: "#22c55e", fontFamily: "'JetBrains Mono', monospace" }}>{l.latency}</span>
+                    <span style={{ fontSize: 20, fontWeight: 700, color: "#f1f5f9", fontFamily: "'JetBrains Mono', monospace" }}>{l.name}</span>
+                    <span style={{ fontSize: 15, color: "#22c55e", fontFamily: "'JetBrains Mono', monospace" }}>{l.latency}</span>
                   </div>
-                  <div style={{ fontSize: 14, color: "#64748b", marginBottom: 8 }}>{l.where}</div>
-                  <div style={{ fontSize: 14, marginBottom: 6 }}><span style={{ color: "#22c55e" }}>Cache: </span><span style={{ color: "#94a3b8" }}>{l.what}</span></div>
-                  <div style={{ fontSize: 14, marginBottom: 6 }}><span style={{ color: "#ef4444" }}>Don't cache: </span><span style={{ color: "#94a3b8" }}>{l.notWhat}</span></div>
-                  <div style={{ fontSize: 14, marginBottom: 4 }}><span style={{ color: "#fbbf24" }}>Controlled by: </span><span style={{ color: "#94a3b8" }}>{l.control}</span></div>
-                  {l.note && <div style={{ fontSize: 13, color: "#64748b", fontStyle: "italic", marginTop: 8 }}>💡 {l.note}</div>}
+                  <div style={{ fontSize: 17, color: "#9ca3af", marginBottom: 8 }}>{l.where}</div>
+                  <div style={{ fontSize: 17, marginBottom: 6 }}><span style={{ color: "#22c55e" }}>Cache: </span><span style={{ color: "#d1d5db" }}>{l.what}</span></div>
+                  <div style={{ fontSize: 17, marginBottom: 6 }}><span style={{ color: "#ef4444" }}>Don't cache: </span><span style={{ color: "#d1d5db" }}>{l.notWhat}</span></div>
+                  <div style={{ fontSize: 17, marginBottom: 4 }}><span style={{ color: "#fbbf24" }}>Controlled by: </span><span style={{ color: "#d1d5db" }}>{l.control}</span></div>
+                  {l.note && <div style={{ fontSize: 15, color: "#9ca3af", fontStyle: "italic", marginTop: 8 }}>💡 {l.note}</div>}
                 </div>
               ))}
             </div>
@@ -297,10 +297,10 @@ export default function CachingCheatSheet() {
 
         {/* Strategies */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10, flexWrap: "wrap", gap: 8 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", margin: 0 }}>Caching Strategies</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", margin: 0 }}>Caching Strategies</h2>
           <div style={{ display: "flex", gap: 6 }}>
-            <button onClick={expandAll(setExpStrat, strategies)} style={{ background: "#2a2a4a", color: "#94a3b8", border: "none", padding: "5px 10px", borderRadius: 5, cursor: "pointer", fontSize: 11 }}>Expand All</button>
-            <button onClick={collapseAll(setExpStrat)} style={{ background: "#2a2a4a", color: "#94a3b8", border: "none", padding: "5px 10px", borderRadius: 5, cursor: "pointer", fontSize: 11 }}>Collapse All</button>
+            <button onClick={expandAll(setExpStrat, strategies)} style={{ background: "#2a2a4a", color: "#d1d5db", border: "none", padding: "5px 10px", borderRadius: 5, cursor: "pointer", fontSize: 13 }}>Expand All</button>
+            <button onClick={collapseAll(setExpStrat)} style={{ background: "#2a2a4a", color: "#d1d5db", border: "none", padding: "5px 10px", borderRadius: 5, cursor: "pointer", fontSize: 13 }}>Collapse All</button>
           </div>
         </div>
         {strategies.map((s, i) => <StrategyCard key={s.name} s={s} isExpanded={expStrat.has(i)} onToggle={toggle(setExpStrat, i)} />)}
@@ -308,21 +308,21 @@ export default function CachingCheatSheet() {
         {/* Invalidation */}
         <div style={{ background: "#1a1a2e", borderRadius: 10, border: "1px solid #2a2a4a", marginBottom: 20, overflow: "hidden" }}>
           <div onClick={() => setShowInvalidation(!showInvalidation)} style={{ padding: "12px 16px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <span style={{ fontWeight: 700, fontSize: 15, color: "#f87171" }}>🗑️ Cache Invalidation</span>
-            <span style={{ color: "#64748b", transform: showInvalidation ? "rotate(180deg)" : "", transition: "transform 0.2s" }}>▼</span>
+            <span style={{ fontWeight: 700, fontSize: 17, color: "#f87171" }}>🗑️ Cache Invalidation</span>
+            <span style={{ color: "#9ca3af", transform: showInvalidation ? "rotate(180deg)" : "", transition: "transform 0.2s" }}>▼</span>
           </div>
           {showInvalidation && (
             <div style={{ padding: "0 16px 14px" }}>
               <div style={{ background: "#1c0f0f", borderRadius: 6, padding: 12, marginBottom: 14, border: "1px solid #3b1515" }}>
-                <div style={{ fontSize: 14, color: "#fca5a5", fontWeight: 600 }}>⚠️ Golden Rule: Always DELETE the cache key on write, never UPDATE it.</div>
-                <div style={{ fontSize: 14, color: "#94a3b8", marginTop: 6 }}>Why? Two concurrent writes can race and leave stale data. DELETE is idempotent and safe — the next read re-populates from DB.</div>
+                <div style={{ fontSize: 17, color: "#fca5a5", fontWeight: 600 }}>⚠️ Golden Rule: Always DELETE the cache key on write, never UPDATE it.</div>
+                <div style={{ fontSize: 17, color: "#d1d5db", marginTop: 6 }}>Why? Two concurrent writes can race and leave stale data. DELETE is idempotent and safe — the next read re-populates from DB.</div>
               </div>
               {invalidation.map((inv, i) => (
                 <div key={i} style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px", marginBottom: i < invalidation.length - 1 ? 10 : 0 }}>
-                  <div style={{ fontSize: 17, fontWeight: 700, color: "#e2e8f0", marginBottom: 6 }}>{inv.name}</div>
-                  <div style={{ fontSize: 16, color: "#cbd5e1", marginBottom: 6 }}>{inv.how}</div>
-                  <div style={{ fontSize: 14, color: "#fbbf24", marginBottom: 6 }}>{inv.tradeoff}</div>
-                  <div style={{ fontSize: 13, color: "#818cf8", fontFamily: "'JetBrains Mono', monospace", overflowX: "auto", WebkitOverflowScrolling: "touch" }}>{inv.example}</div>
+                  <div style={{ fontSize: 20, fontWeight: 700, color: "#f1f5f9", marginBottom: 6 }}>{inv.name}</div>
+                  <div style={{ fontSize: 19, color: "#d1d5db", marginBottom: 6 }}>{inv.how}</div>
+                  <div style={{ fontSize: 17, color: "#fbbf24", marginBottom: 6 }}>{inv.tradeoff}</div>
+                  <div style={{ fontSize: 15, color: "#818cf8", fontFamily: "'JetBrains Mono', monospace", overflowX: "auto", WebkitOverflowScrolling: "touch" }}>{inv.example}</div>
                 </div>
               ))}
             </div>
@@ -331,33 +331,33 @@ export default function CachingCheatSheet() {
 
         {/* Stampede Problems */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", margin: 0 }}>Cache Failure Modes</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", margin: 0 }}>Cache Failure Modes</h2>
         </div>
         {stampedeProblems.map((p, i) => <StampedeCard key={p.name} problem={p} isExpanded={expStampede.has(i)} onToggle={toggle(setExpStampede, i)} />)}
 
         {/* Redis Data Structures */}
         <div style={{ background: "#1a1a2e", borderRadius: 10, border: "1px solid #2a2a4a", marginBottom: 20, padding: "14px 12px", overflow: "hidden" }}>
           <div onClick={() => setShowRedis(!showRedis)} style={{ cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <span style={{ fontWeight: 700, fontSize: 15, color: "#818cf8" }}>📦 Redis Data Structures</span>
-            <span style={{ color: "#64748b", transform: showRedis ? "rotate(180deg)" : "", transition: "transform 0.2s" }}>▼</span>
+            <span style={{ fontWeight: 700, fontSize: 17, color: "#818cf8" }}>📦 Redis Data Structures</span>
+            <span style={{ color: "#9ca3af", transform: showRedis ? "rotate(180deg)" : "", transition: "transform 0.2s" }}>▼</span>
           </div>
           {showRedis && (
             <div style={{ marginTop: 14, overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
-              <div style={{ fontSize: 14, color: "#64748b", marginBottom: 14 }}>Redis IS the data structure. Operations are O(1) or O(log N).</div>
-              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13, minWidth: 500 }}>
+              <div style={{ fontSize: 17, color: "#9ca3af", marginBottom: 14 }}>Redis IS the data structure. Operations are O(1) or O(log N).</div>
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 15, minWidth: 500 }}>
                 <thead>
                   <tr>
                     {["Structure", "Commands", "Use Case"].map(h => (
-                      <th key={h} style={{ textAlign: "left", padding: "8px 10px", color: "#818cf8", borderBottom: "2px solid #2a2a4a", fontFamily: "'JetBrains Mono', monospace", whiteSpace: "nowrap", fontSize: 12 }}>{h}</th>
+                      <th key={h} style={{ textAlign: "left", padding: "8px 10px", color: "#818cf8", borderBottom: "2px solid #2a2a4a", fontFamily: "'JetBrains Mono', monospace", whiteSpace: "nowrap", fontSize: 14 }}>{h}</th>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
                   {redisStructures.map((r, i) => (
                     <tr key={i}>
-                      <td style={{ padding: "8px 10px", color: "#e2e8f0", borderBottom: "1px solid #1a1a3e", fontWeight: 600, fontSize: 14 }}>{r.structure}</td>
-                      <td style={{ padding: "8px 10px", color: "#fbbf24", borderBottom: "1px solid #1a1a3e", fontFamily: "'JetBrains Mono', monospace", fontSize: 12 }}>{r.command}</td>
-                      <td style={{ padding: "8px 10px", color: "#94a3b8", borderBottom: "1px solid #1a1a3e", fontSize: 14 }}>{r.useCase}</td>
+                      <td style={{ padding: "8px 10px", color: "#f1f5f9", borderBottom: "1px solid #1a1a3e", fontWeight: 600, fontSize: 17 }}>{r.structure}</td>
+                      <td style={{ padding: "8px 10px", color: "#fbbf24", borderBottom: "1px solid #1a1a3e", fontFamily: "'JetBrains Mono', monospace", fontSize: 14 }}>{r.command}</td>
+                      <td style={{ padding: "8px 10px", color: "#d1d5db", borderBottom: "1px solid #1a1a3e", fontSize: 17 }}>{r.useCase}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -367,14 +367,14 @@ export default function CachingCheatSheet() {
         </div>
 
         {/* FAQ */}
-        <h2 style={{ fontSize: 16, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", marginBottom: 10, marginTop: 8 }}>Common Interview Q&A</h2>
+        <h2 style={{ fontSize: 22, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", marginBottom: 10, marginTop: 8 }}>Common Interview Q&A</h2>
         {faqs.map((faq, i) => (
           <div key={i} style={{ background: "#1a1a2e", borderRadius: 10, border: "1px solid #2a2a4a", marginBottom: 10, overflow: "hidden" }}>
             <div onClick={toggle(setExpFaqs, i)} style={{ padding: "14px 16px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
-              <span style={{ fontSize: 17, fontWeight: 600, color: "#e2e8f0", flex: 1 }}>{faq.q}</span>
-              <span style={{ color: "#64748b", fontSize: 14, transform: expFaqs.has(i) ? "rotate(180deg)" : "", transition: "transform 0.2s", flexShrink: 0 }}>▼</span>
+              <span style={{ fontSize: 20, fontWeight: 600, color: "#f1f5f9", flex: 1 }}>{faq.q}</span>
+              <span style={{ color: "#9ca3af", fontSize: 16, transform: expFaqs.has(i) ? "rotate(180deg)" : "", transition: "transform 0.2s", flexShrink: 0 }}>▼</span>
             </div>
-            {expFaqs.has(i) && <div style={{ padding: "0 16px 14px" }}><div style={{ fontSize: 16, color: "#94a3b8", lineHeight: 1.7 }}>{faq.a}</div></div>}
+            {expFaqs.has(i) && <div style={{ padding: "0 16px 14px" }}><div style={{ fontSize: 19, color: "#d1d5db", lineHeight: 1.7 }}>{faq.a}</div></div>}
           </div>
         ))}
       </div>

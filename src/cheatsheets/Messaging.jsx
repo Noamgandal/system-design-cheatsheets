@@ -267,12 +267,12 @@ function ServiceCard({ svc, isExpanded, onToggle }) {
       >
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4, flexWrap: "wrap" }}>
-            <span style={{ fontSize: 18, fontWeight: 700, color: "#e2e8f0", fontFamily: "'JetBrains Mono', monospace" }}>{svc.name}</span>
-            <span style={{ fontSize: 12, padding: "3px 8px", borderRadius: 4, background: "#2a2a4a", color: "#94a3b8", fontFamily: "'JetBrains Mono', monospace", whiteSpace: "nowrap" }}>{svc.type}</span>
+            <span style={{ fontSize: 20, fontWeight: 700, color: "#f1f5f9", fontFamily: "'JetBrains Mono', monospace" }}>{svc.name}</span>
+            <span style={{ fontSize: 14, padding: "3px 8px", borderRadius: 4, background: "#2a2a4a", color: "#d1d5db", fontFamily: "'JetBrains Mono', monospace", whiteSpace: "nowrap" }}>{svc.type}</span>
           </div>
-          <div style={{ fontSize: 14, color: "#64748b", fontStyle: "italic" }}>{svc.tagline}</div>
+          <div style={{ fontSize: 17, color: "#9ca3af", fontStyle: "italic" }}>{svc.tagline}</div>
         </div>
-        <span style={{ color: "#64748b", fontSize: 14, transform: isExpanded ? "rotate(180deg)" : "rotate(0)", transition: "transform 0.2s", flexShrink: 0 }}>▼</span>
+        <span style={{ color: "#9ca3af", fontSize: 16, transform: isExpanded ? "rotate(180deg)" : "rotate(0)", transition: "transform 0.2s", flexShrink: 0 }}>▼</span>
       </div>
 
       {isExpanded && (
@@ -288,31 +288,31 @@ function ServiceCard({ svc, isExpanded, onToggle }) {
               ["Replay", svc.replay],
             ].map(([label, value]) => (
               <div key={label} style={{ background: "#0f0f23", borderRadius: 6, padding: "10px 12px" }}>
-                <div style={{ fontSize: 11, color: "#64748b", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 4 }}>{label}</div>
-                <div style={{ fontSize: 16, color: "#cbd5e1", lineHeight: 1.6 }}>{value}</div>
+                <div style={{ fontSize: 13, color: "#9ca3af", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 4 }}>{label}</div>
+                <div style={{ fontSize: 19, color: "#d1d5db", lineHeight: 1.6 }}>{value}</div>
               </div>
             ))}
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 12, marginBottom: 16 }}>
             <div>
-              <div style={{ fontSize: 13, fontWeight: 700, color: "#22c55e", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>✓ Best for</div>
-              {svc.bestFor.map((item, i) => (<div key={i} style={{ fontSize: 16, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>• {item}</div>))}
+              <div style={{ fontSize: 14, fontWeight: 700, color: "#22c55e", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>✓ Best for</div>
+              {svc.bestFor.map((item, i) => (<div key={i} style={{ fontSize: 19, color: "#d1d5db", marginBottom: 4, paddingLeft: 6 }}>• {item}</div>))}
             </div>
             <div>
-              <div style={{ fontSize: 13, fontWeight: 700, color: "#ef4444", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>✗ Not for</div>
-              {svc.notFor.map((item, i) => (<div key={i} style={{ fontSize: 16, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>• {item}</div>))}
+              <div style={{ fontSize: 14, fontWeight: 700, color: "#ef4444", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>✗ Not for</div>
+              {svc.notFor.map((item, i) => (<div key={i} style={{ fontSize: 19, color: "#d1d5db", marginBottom: 4, paddingLeft: 6 }}>• {item}</div>))}
             </div>
           </div>
 
           <div style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px", marginBottom: 12 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: "#fbbf24", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>📌 Key Details</div>
-            {svc.keyDetails.map((item, i) => (<div key={i} style={{ fontSize: 16, color: "#cbd5e1", marginBottom: 4, paddingLeft: 6 }}>• {item}</div>))}
+            <div style={{ fontSize: 14, fontWeight: 700, color: "#fbbf24", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>📌 Key Details</div>
+            {svc.keyDetails.map((item, i) => (<div key={i} style={{ fontSize: 19, color: "#d1d5db", marginBottom: 4, paddingLeft: 6 }}>• {item}</div>))}
           </div>
 
           <div style={{ background: "#0f1c0f", borderRadius: 6, padding: "12px 14px", border: "1px solid #153b15" }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: "#22c55e", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>🎯 Interview Trigger</div>
-            <div style={{ fontSize: 16, color: "#86efac", lineHeight: 1.6, fontStyle: "italic" }}>{svc.interviewTip}</div>
+            <div style={{ fontSize: 14, fontWeight: 700, color: "#22c55e", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>🎯 Interview Trigger</div>
+            <div style={{ fontSize: 19, color: "#86efac", lineHeight: 1.6, fontStyle: "italic" }}>{svc.interviewTip}</div>
           </div>
         </div>
       )}
@@ -328,37 +328,37 @@ function PatternCard({ pattern, isExpanded, onToggle }) {
         style={{ padding: "12px 14px", cursor: "pointer", display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 10, borderBottom: isExpanded ? "1px solid #2a2a4a" : "none" }}
       >
         <div style={{ flex: 1, minWidth: 0 }}>
-          <span style={{ fontSize: 17, fontWeight: 700, color: "#e2e8f0", fontFamily: "'JetBrains Mono', monospace" }}>{pattern.name}</span>
-          <div style={{ fontSize: 14, color: "#64748b", marginTop: 4 }}>{pattern.problem}</div>
+          <span style={{ fontSize: 20, fontWeight: 700, color: "#f1f5f9", fontFamily: "'JetBrains Mono', monospace" }}>{pattern.name}</span>
+          <div style={{ fontSize: 17, color: "#9ca3af", marginTop: 4 }}>{pattern.problem}</div>
         </div>
-        <span style={{ color: "#64748b", fontSize: 14, transform: isExpanded ? "rotate(180deg)" : "rotate(0)", transition: "transform 0.2s", flexShrink: 0 }}>▼</span>
+        <span style={{ color: "#9ca3af", fontSize: 16, transform: isExpanded ? "rotate(180deg)" : "rotate(0)", transition: "transform 0.2s", flexShrink: 0 }}>▼</span>
       </div>
 
       {isExpanded && (
         <div style={{ padding: "12px 14px" }}>
           <div style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px", marginBottom: 12 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: "#818cf8", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>Solution</div>
-            <div style={{ fontSize: 16, color: "#cbd5e1", lineHeight: 1.6 }}>{pattern.solution}</div>
+            <div style={{ fontSize: 14, fontWeight: 700, color: "#818cf8", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>Solution</div>
+            <div style={{ fontSize: 19, color: "#d1d5db", lineHeight: 1.6 }}>{pattern.solution}</div>
           </div>
 
           <div style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px", marginBottom: 12 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: "#22c55e", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>Flow</div>
+            <div style={{ fontSize: 14, fontWeight: 700, color: "#22c55e", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>Flow</div>
             {pattern.flow.map((step, i) => (
               <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8, marginBottom: 6 }}>
-                <span style={{ fontSize: 12, fontWeight: 700, color: "#818cf8", fontFamily: "'JetBrains Mono', monospace", minWidth: 20 }}>{i + 1}.</span>
-                <span style={{ fontSize: 14, color: "#94a3b8" }}>{step}</span>
+                <span style={{ fontSize: 14, fontWeight: 700, color: "#818cf8", fontFamily: "'JetBrains Mono', monospace", minWidth: 20 }}>{i + 1}.</span>
+                <span style={{ fontSize: 17, color: "#d1d5db" }}>{step}</span>
               </div>
             ))}
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 10 }}>
             <div style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px" }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: "#fbbf24", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>When to use</div>
-              <div style={{ fontSize: 16, color: "#cbd5e1", lineHeight: 1.6 }}>{pattern.when}</div>
+              <div style={{ fontSize: 14, fontWeight: 700, color: "#fbbf24", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>When to use</div>
+              <div style={{ fontSize: 19, color: "#d1d5db", lineHeight: 1.6 }}>{pattern.when}</div>
             </div>
             <div style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px" }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: "#f97316", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>Alternative</div>
-              <div style={{ fontSize: 16, color: "#cbd5e1", lineHeight: 1.6 }}>{pattern.alternative}</div>
+              <div style={{ fontSize: 14, fontWeight: 700, color: "#f97316", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>Alternative</div>
+              <div style={{ fontSize: 19, color: "#d1d5db", lineHeight: 1.6 }}>{pattern.alternative}</div>
             </div>
           </div>
         </div>
@@ -384,20 +384,20 @@ export default function MessagingCheatSheet() {
   const collapseAllPat = () => setExpandedPatterns(new Set());
 
   return (
-    <div style={{ minHeight: "100vh", background: "#0f0f23", color: "#e2e8f0", fontFamily: "'Segoe UI', system-ui, sans-serif", padding: "16px 12px" }}>
+    <div style={{ minHeight: "100vh", background: "#0f0f23", color: "#f1f5f9", fontFamily: "'Segoe UI', system-ui, sans-serif", padding: "16px 12px" }}>
       <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
 
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
-        <h1 style={{ fontSize: "clamp(20px, 5vw, 28px)", fontWeight: 800, marginBottom: 4, fontFamily: "'JetBrains Mono', monospace" }}>
+        <h1 style={{ fontSize: "clamp(22px, 5vw, 28px)", fontWeight: 800, marginBottom: 4, fontFamily: "'JetBrains Mono', monospace" }}>
           Messaging & Queues Cheat Sheet
         </h1>
-        <p style={{ color: "#64748b", fontSize: 13, marginBottom: 16 }}>System Design Interview Reference — Google L6</p>
+        <p style={{ color: "#9ca3af", fontSize: 18, marginBottom: 16 }}>System Design Interview Reference — Google L6</p>
 
         {/* Decision Tree */}
         <div style={{ background: "#1a1a2e", borderRadius: 10, border: "1px solid #2a2a4a", marginBottom: 20, overflow: "hidden" }}>
           <div onClick={() => setShowDecision(!showDecision)} style={{ padding: "12px 16px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <span style={{ fontWeight: 700, fontSize: 14, color: "#fbbf24" }}>⚡ Quick Decision Tree</span>
-            <span style={{ color: "#64748b", transform: showDecision ? "rotate(180deg)" : "", transition: "transform 0.2s" }}>▼</span>
+            <span style={{ fontWeight: 700, fontSize: 17, color: "#fbbf24" }}>⚡ Quick Decision Tree</span>
+            <span style={{ color: "#9ca3af", transform: showDecision ? "rotate(180deg)" : "", transition: "transform 0.2s" }}>▼</span>
           </div>
           {showDecision && (
             <div style={{ padding: "0 16px 14px" }}>
@@ -410,8 +410,8 @@ export default function MessagingCheatSheet() {
                 ['"Run this every 5 minutes"', "→ Scheduler"],
                 ['"Simple per-message transform"', "→ Function"],
               ].map(([q, a], i) => (
-                <div key={i} style={{ display: "flex", flexWrap: "wrap", gap: 8, padding: "10px 0", borderBottom: i < 6 ? "1px solid #1a1a3e" : "none", fontSize: 15 }}>
-                  <span style={{ color: "#94a3b8", flex: "1 1 200px", minWidth: 0 }}>{q}</span>
+                <div key={i} style={{ display: "flex", flexWrap: "wrap", gap: 8, padding: "10px 0", borderBottom: i < 6 ? "1px solid #1a1a3e" : "none", fontSize: 17 }}>
+                  <span style={{ color: "#d1d5db", flex: "1 1 200px", minWidth: 0 }}>{q}</span>
                   <span style={{ color: "#22c55e", fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", whiteSpace: "nowrap" }}>{a}</span>
                 </div>
               ))}
@@ -421,10 +421,10 @@ export default function MessagingCheatSheet() {
 
         {/* Services Section */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10, flexWrap: "wrap", gap: 8 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", margin: 0 }}>Services</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", margin: 0 }}>Services</h2>
           <div style={{ display: "flex", gap: 6 }}>
-            <button onClick={expandAllSvc} style={{ background: "#2a2a4a", color: "#94a3b8", border: "none", padding: "5px 10px", borderRadius: 5, cursor: "pointer", fontSize: 11 }}>Expand All</button>
-            <button onClick={collapseAllSvc} style={{ background: "#2a2a4a", color: "#94a3b8", border: "none", padding: "5px 10px", borderRadius: 5, cursor: "pointer", fontSize: 11 }}>Collapse All</button>
+            <button onClick={expandAllSvc} style={{ background: "#2a2a4a", color: "#d1d5db", border: "none", padding: "5px 10px", borderRadius: 5, cursor: "pointer", fontSize: 13 }}>Expand All</button>
+            <button onClick={collapseAllSvc} style={{ background: "#2a2a4a", color: "#d1d5db", border: "none", padding: "5px 10px", borderRadius: 5, cursor: "pointer", fontSize: 13 }}>Collapse All</button>
           </div>
         </div>
         {services.map((svc, i) => (<ServiceCard key={svc.name} svc={svc} isExpanded={expandedServices.has(i)} onToggle={() => toggleService(i)} />))}
@@ -432,15 +432,15 @@ export default function MessagingCheatSheet() {
         {/* Comparison Table */}
         <div style={{ background: "#1a1a2e", borderRadius: 10, border: "1px solid #2a2a4a", padding: "14px 12px", marginBottom: 20, overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
           <div onClick={() => setShowComparison(!showComparison)} style={{ cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <h2 style={{ fontSize: 14, fontWeight: 700, margin: 0, fontFamily: "'JetBrains Mono', monospace" }}>Side-by-Side Comparison</h2>
-            <span style={{ color: "#64748b", transform: showComparison ? "rotate(180deg)" : "", transition: "transform 0.2s" }}>▼</span>
+            <h2 style={{ fontSize: 17, fontWeight: 700, margin: 0, fontFamily: "'JetBrains Mono', monospace" }}>Side-by-Side Comparison</h2>
+            <span style={{ color: "#9ca3af", transform: showComparison ? "rotate(180deg)" : "", transition: "transform 0.2s" }}>▼</span>
           </div>
           {showComparison && (
-            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 11, marginTop: 12, minWidth: 500 }}>
+            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14, marginTop: 12, minWidth: 500 }}>
               <thead>
                 <tr>
                   {["", "Pub/Sub", "Tasks", "Dataflow", "Kafka", "CDC"].map((h) => (
-                    <th key={h} style={{ textAlign: "left", padding: "6px 8px", color: "#818cf8", borderBottom: "2px solid #2a2a4a", fontFamily: "'JetBrains Mono', monospace", whiteSpace: "nowrap", fontSize: 10 }}>{h}</th>
+                    <th key={h} style={{ textAlign: "left", padding: "6px 8px", color: "#818cf8", borderBottom: "2px solid #2a2a4a", fontFamily: "'JetBrains Mono', monospace", whiteSpace: "nowrap", fontSize: 13 }}>{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -457,7 +457,7 @@ export default function MessagingCheatSheet() {
                 ].map((row, i) => (
                   <tr key={i}>
                     {row.map((cell, j) => (
-                      <td key={j} style={{ padding: "5px 8px", color: j === 0 ? "#64748b" : "#cbd5e1", borderBottom: "1px solid #1a1a3e", fontFamily: j === 0 ? "inherit" : "'JetBrains Mono', monospace", fontWeight: j === 0 ? 600 : 400, fontSize: 10, whiteSpace: "nowrap" }}>{cell}</td>
+                      <td key={j} style={{ padding: "5px 8px", color: j === 0 ? "#9ca3af" : "#d1d5db", borderBottom: "1px solid #1a1a3e", fontFamily: j === 0 ? "inherit" : "'JetBrains Mono', monospace", fontWeight: j === 0 ? 600 : 400, fontSize: 13, whiteSpace: "nowrap" }}>{cell}</td>
                     ))}
                   </tr>
                 ))}
@@ -468,25 +468,25 @@ export default function MessagingCheatSheet() {
 
         {/* Patterns Section */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10, flexWrap: "wrap", gap: 8 }}>
-          <h2 style={{ fontSize: 16, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", margin: 0 }}>Patterns</h2>
+          <h2 style={{ fontSize: 22, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", margin: 0 }}>Patterns</h2>
           <div style={{ display: "flex", gap: 6 }}>
-            <button onClick={expandAllPat} style={{ background: "#2a2a4a", color: "#94a3b8", border: "none", padding: "5px 10px", borderRadius: 5, cursor: "pointer", fontSize: 11 }}>Expand All</button>
-            <button onClick={collapseAllPat} style={{ background: "#2a2a4a", color: "#94a3b8", border: "none", padding: "5px 10px", borderRadius: 5, cursor: "pointer", fontSize: 11 }}>Collapse All</button>
+            <button onClick={expandAllPat} style={{ background: "#2a2a4a", color: "#d1d5db", border: "none", padding: "5px 10px", borderRadius: 5, cursor: "pointer", fontSize: 13 }}>Expand All</button>
+            <button onClick={collapseAllPat} style={{ background: "#2a2a4a", color: "#d1d5db", border: "none", padding: "5px 10px", borderRadius: 5, cursor: "pointer", fontSize: 13 }}>Collapse All</button>
           </div>
         </div>
         {patterns.map((p, i) => (<PatternCard key={p.name} pattern={p} isExpanded={expandedPatterns.has(i)} onToggle={() => togglePattern(i)} />))}
 
         {/* FAQ Section */}
-        <h2 style={{ fontSize: 16, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", marginBottom: 10, marginTop: 8 }}>Common Interview Q&A</h2>
+        <h2 style={{ fontSize: 22, fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", marginBottom: 10, marginTop: 8 }}>Common Interview Q&A</h2>
         {faqs.map((faq, i) => (
           <div key={i} style={{ background: "#1a1a2e", borderRadius: 10, border: "1px solid #2a2a4a", marginBottom: 10, overflow: "hidden" }}>
             <div onClick={() => toggleFaq(i)} style={{ padding: "14px 16px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
-              <span style={{ fontSize: 17, fontWeight: 600, color: "#e2e8f0", flex: 1 }}>{faq.q}</span>
-              <span style={{ color: "#64748b", fontSize: 14, transform: expandedFaqs.has(i) ? "rotate(180deg)" : "rotate(0)", transition: "transform 0.2s", flexShrink: 0 }}>▼</span>
+              <span style={{ fontSize: 20, fontWeight: 600, color: "#f1f5f9", flex: 1 }}>{faq.q}</span>
+              <span style={{ color: "#9ca3af", fontSize: 16, transform: expandedFaqs.has(i) ? "rotate(180deg)" : "rotate(0)", transition: "transform 0.2s", flexShrink: 0 }}>▼</span>
             </div>
             {expandedFaqs.has(i) && (
               <div style={{ padding: "0 16px 14px" }}>
-                <div style={{ fontSize: 16, color: "#94a3b8", lineHeight: 1.7 }}>{faq.a}</div>
+                <div style={{ fontSize: 19, color: "#d1d5db", lineHeight: 1.7 }}>{faq.a}</div>
               </div>
             )}
           </div>

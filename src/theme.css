@@ -1,0 +1,50 @@
+/* Theme CSS Variables for System Design Cheatsheets */
+/* Centralized theme for easy readability adjustments */
+
+:root {
+  /* Font Sizes - Optimized for readability on mobile */
+  --font-size-body: 19px;
+  --font-size-term: 20px;
+  --font-size-section-header: 22px;
+  --font-size-page-title: 28px;
+  --font-size-subtitle: 18px;
+  --font-size-label: 16px;
+  --font-size-tab-button: 17px;
+  --font-size-small: 14px;
+  --font-size-tiny: 12px;
+
+  /* Primary Text Colors - Improved contrast */
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #d1d5db;
+  --color-text-muted: #9ca3af;
+  --color-text-subtle: #6b7280;
+
+  /* Semantic Colors - AA contrast compliant */
+  --color-success: #4ade80;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+  --color-info: #60a5fa;
+
+  /* Accent Colors */
+  --color-cyan: #00d2ff;
+  --color-purple: #a78bfa;
+  --color-blue: #60a5fa;
+  --color-pink: #f472b6;
+
+  /* Background Colors */
+  --color-bg-primary: #0f0f23;
+  --color-bg-secondary: #1a1a2e;
+  --color-bg-card: #12121f;
+  --color-bg-dark: #0a0a14;
+  --color-bg-darker: #0d0d1a;
+
+  /* Border Colors */
+  --color-border: #2a2a4a;
+  --color-border-light: #252540;
+  --color-border-active: #1a1a3e;
+
+  /* Line Heights */
+  --line-height-body: 1.7;
+  --line-height-tight: 1.5;
+  --line-height-relaxed: 1.8;
+}

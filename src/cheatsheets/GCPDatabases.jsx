@@ -284,7 +284,7 @@ function DBCard({ db, isExpanded, onToggle }) {
     if (val.includes("<10") || val.includes("1–5") || val.includes("2–10") || val.includes("5–20")) return "#86efac";
     if (val.includes("100")) return "#fbbf24";
     if (val.includes("Seconds")) return "#f87171";
-    return "#94a3b8";
+    return "#d1d5db";
   };
 
   return (
@@ -313,16 +313,16 @@ function DBCard({ db, isExpanded, onToggle }) {
       >
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4, flexWrap: "wrap" }}>
-            <span style={{ fontSize: 18, fontWeight: 700, color: "#e2e8f0", fontFamily: "'JetBrains Mono', monospace" }}>
+            <span style={{ fontSize: 20, fontWeight: 700, color: "#f1f5f9", fontFamily: "'JetBrains Mono', monospace" }}>
               {db.name}
             </span>
             <span
               style={{
-                fontSize: 12,
+                fontSize: 14,
                 padding: "3px 8px",
                 borderRadius: 4,
                 background: "#2a2a4a",
-                color: "#94a3b8",
+                color: "#d1d5db",
                 fontFamily: "'JetBrains Mono', monospace",
                 whiteSpace: "nowrap",
               }}
@@ -330,24 +330,24 @@ function DBCard({ db, isExpanded, onToggle }) {
               {db.type}
             </span>
           </div>
-          <div style={{ fontSize: 16, color: "#64748b", fontStyle: "italic" }}>{db.tagline}</div>
+          <div style={{ fontSize: 18, color: "#9ca3af", fontStyle: "italic" }}>{db.tagline}</div>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
-          <div style={{ textAlign: "right", fontSize: 13 }}>
+          <div style={{ textAlign: "right", fontSize: 15 }}>
             <div>
-              <span style={{ color: "#64748b" }}>R: </span>
+              <span style={{ color: "#9ca3af" }}>R: </span>
               <span style={{ color: latencyColor(db.latency.read), fontFamily: "'JetBrains Mono', monospace", fontWeight: 600 }}>
                 {db.latency.read}
               </span>
             </div>
             <div>
-              <span style={{ color: "#64748b" }}>W: </span>
+              <span style={{ color: "#9ca3af" }}>W: </span>
               <span style={{ color: latencyColor(db.latency.write), fontFamily: "'JetBrains Mono', monospace", fontWeight: 600 }}>
                 {db.latency.write}
               </span>
             </div>
           </div>
-          <span style={{ color: "#64748b", fontSize: 14, transform: isExpanded ? "rotate(180deg)" : "rotate(0)", transition: "transform 0.2s" }}>
+          <span style={{ color: "#9ca3af", fontSize: 16, transform: isExpanded ? "rotate(180deg)" : "rotate(0)", transition: "transform 0.2s" }}>
             ▼
           </span>
         </div>
@@ -374,10 +374,10 @@ function DBCard({ db, isExpanded, onToggle }) {
               ["Cost", db.cost],
             ].map(([label, value]) => (
               <div key={label} style={{ background: "#0f0f23", borderRadius: 6, padding: "10px 12px" }}>
-                <div style={{ fontSize: 11, color: "#64748b", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 4 }}>
+                <div style={{ fontSize: 13, color: "#9ca3af", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 4 }}>
                   {label}
                 </div>
-                <div style={{ fontSize: 16, color: "#cbd5e1", lineHeight: 1.6 }}>{value}</div>
+                <div style={{ fontSize: 19, color: "#d1d5db", lineHeight: 1.6 }}>{value}</div>
               </div>
             ))}
           </div>
@@ -385,21 +385,21 @@ function DBCard({ db, isExpanded, onToggle }) {
           {/* Best for / Not for */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 12, marginBottom: 16 }}>
             <div>
-              <div style={{ fontSize: 13, fontWeight: 700, color: "#22c55e", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>
+              <div style={{ fontSize: 14, fontWeight: 700, color: "#22c55e", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>
                 ✓ Best for
               </div>
               {db.bestFor.map((item, i) => (
-                <div key={i} style={{ fontSize: 16, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>
+                <div key={i} style={{ fontSize: 19, color: "#d1d5db", marginBottom: 4, paddingLeft: 6 }}>
                   • {item}
                 </div>
               ))}
             </div>
             <div>
-              <div style={{ fontSize: 13, fontWeight: 700, color: "#ef4444", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>
+              <div style={{ fontSize: 14, fontWeight: 700, color: "#ef4444", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>
                 ✗ Not for
               </div>
               {db.notFor.map((item, i) => (
-                <div key={i} style={{ fontSize: 16, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>
+                <div key={i} style={{ fontSize: 19, color: "#d1d5db", marginBottom: 4, paddingLeft: 6 }}>
                   • {item}
                 </div>
               ))}
@@ -408,18 +408,18 @@ function DBCard({ db, isExpanded, onToggle }) {
 
           {/* Key Design */}
           <div style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px", marginBottom: 12 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: "#fbbf24", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
+            <div style={{ fontSize: 14, fontWeight: 700, color: "#fbbf24", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
               🔑 Key / Schema Design
             </div>
-            <div style={{ fontSize: 16, color: "#cbd5e1", lineHeight: 1.6 }}>{db.keyDesign}</div>
+            <div style={{ fontSize: 19, color: "#d1d5db", lineHeight: 1.6 }}>{db.keyDesign}</div>
           </div>
 
           {/* Row Example */}
           <div style={{ background: "#0f0f23", borderRadius: 6, padding: "10px 12px", marginBottom: 12, overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
-            <div style={{ fontSize: 10, fontWeight: 700, color: "#818cf8", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
+            <div style={{ fontSize: 12, fontWeight: 700, color: "#818cf8", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
               📋 Example: {db.rowExample.description}
             </div>
-            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 11, minWidth: 400 }}>
+            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13, minWidth: 400 }}>
               <thead>
                 <tr>
                   {db.rowExample.headers.map((h, i) => (
@@ -433,7 +433,7 @@ function DBCard({ db, isExpanded, onToggle }) {
                         fontFamily: "'JetBrains Mono', monospace",
                         fontWeight: 600,
                         whiteSpace: "nowrap",
-                        fontSize: 10,
+                        fontSize: 12,
                       }}
                     >
                       {h}
@@ -449,10 +449,10 @@ function DBCard({ db, isExpanded, onToggle }) {
                         key={j}
                         style={{
                           padding: "5px 8px",
-                          color: "#94a3b8",
+                          color: "#d1d5db",
                           borderBottom: "1px solid #1a1a2e",
                           fontFamily: "'JetBrains Mono', monospace",
-                          fontSize: 10,
+                          fontSize: 12,
                         }}
                       >
                         {cell}
@@ -466,11 +466,11 @@ function DBCard({ db, isExpanded, onToggle }) {
 
           {/* Gotchas */}
           <div style={{ background: "#1c0f0f", borderRadius: 6, padding: "12px 14px", marginBottom: 12, border: "1px solid #3b1515" }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: "#f87171", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
+            <div style={{ fontSize: 14, fontWeight: 700, color: "#f87171", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
               ⚠️ Gotchas & Pitfalls
             </div>
             {db.gotchas.map((item, i) => (
-              <div key={i} style={{ fontSize: 16, color: "#fca5a5", marginBottom: 4 }}>
+              <div key={i} style={{ fontSize: 19, color: "#fca5a5", marginBottom: 4 }}>
                 • {item}
               </div>
             ))}
@@ -478,10 +478,10 @@ function DBCard({ db, isExpanded, onToggle }) {
 
           {/* Interview Tip */}
           <div style={{ background: "#0f1c0f", borderRadius: 6, padding: "12px 14px", border: "1px solid #153b15" }}>
-            <div style={{ fontSize: 12, fontWeight: 700, color: "#22c55e", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
+            <div style={{ fontSize: 14, fontWeight: 700, color: "#22c55e", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
               🎯 Interview Trigger
             </div>
-            <div style={{ fontSize: 16, color: "#86efac", lineHeight: 1.6, fontStyle: "italic" }}>{db.interviewTip}</div>
+            <div style={{ fontSize: 19, color: "#86efac", lineHeight: 1.6, fontStyle: "italic" }}>{db.interviewTip}</div>
           </div>
         </div>
       )}
@@ -510,7 +510,7 @@ export default function GCPDatabaseCheatSheet() {
       style={{
         minHeight: "100vh",
         background: "#0f0f23",
-        color: "#e2e8f0",
+        color: "#f1f5f9",
         fontFamily: "'Segoe UI', system-ui, sans-serif",
         padding: "16px 12px",
       }}
@@ -519,10 +519,10 @@ export default function GCPDatabaseCheatSheet() {
 
       {/* Header */}
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
-        <h1 style={{ fontSize: "clamp(20px, 5vw, 28px)", fontWeight: 800, marginBottom: 4, fontFamily: "'JetBrains Mono', monospace" }}>
+        <h1 style={{ fontSize: "clamp(22px, 5vw, 28px)", fontWeight: 800, marginBottom: 4, fontFamily: "'JetBrains Mono', monospace" }}>
           GCP Database Cheat Sheet
         </h1>
-        <p style={{ color: "#64748b", fontSize: 13, marginBottom: 16 }}>
+        <p style={{ color: "#9ca3af", fontSize: 18, marginBottom: 16 }}>
           System Design Interview Reference — Google L6
         </p>
 
@@ -546,8 +546,8 @@ export default function GCPDatabaseCheatSheet() {
               alignItems: "center",
             }}
           >
-            <span style={{ fontWeight: 700, fontSize: 15, color: "#fbbf24" }}>⚡ Quick Decision Tree</span>
-            <span style={{ color: "#64748b", transform: showDecisionTree ? "rotate(180deg)" : "", transition: "transform 0.2s" }}>▼</span>
+            <span style={{ fontWeight: 700, fontSize: 17, color: "#fbbf24" }}>⚡ Quick Decision Tree</span>
+            <span style={{ color: "#9ca3af", transform: showDecisionTree ? "rotate(180deg)" : "", transition: "transform 0.2s" }}>▼</span>
           </div>
           {showDecisionTree && (
             <div style={{ padding: "0 16px 14px" }}>
@@ -560,10 +560,10 @@ export default function GCPDatabaseCheatSheet() {
                     gap: 8,
                     padding: "10px 0",
                     borderBottom: i < decisionTree.length - 1 ? "1px solid #1a1a3e" : "none",
-                    fontSize: 15,
+                    fontSize: 17,
                   }}
                 >
-                  <span style={{ color: "#94a3b8", flex: "1 1 200px", minWidth: 0 }}>{item.question}</span>
+                  <span style={{ color: "#d1d5db", flex: "1 1 200px", minWidth: 0 }}>{item.question}</span>
                   <span style={{ color: "#22c55e", fontWeight: 700, fontFamily: "'JetBrains Mono', monospace", whiteSpace: "nowrap" }}>
                     {item.answer}
                   </span>
@@ -579,12 +579,12 @@ export default function GCPDatabaseCheatSheet() {
             onClick={expandAll}
             style={{
               background: "#2a2a4a",
-              color: "#94a3b8",
+              color: "#d1d5db",
               border: "none",
               padding: "6px 14px",
               borderRadius: 6,
               cursor: "pointer",
-              fontSize: 12,
+              fontSize: 14,
             }}
           >
             Expand All
@@ -593,12 +593,12 @@ export default function GCPDatabaseCheatSheet() {
             onClick={collapseAll}
             style={{
               background: "#2a2a4a",
-              color: "#94a3b8",
+              color: "#d1d5db",
               border: "none",
               padding: "6px 14px",
               borderRadius: 6,
               cursor: "pointer",
-              fontSize: 12,
+              fontSize: 14,
             }}
           >
             Collapse All
@@ -622,10 +622,10 @@ export default function GCPDatabaseCheatSheet() {
             WebkitOverflowScrolling: "touch",
           }}
         >
-          <h2 style={{ fontSize: 14, fontWeight: 700, marginBottom: 12, fontFamily: "'JetBrains Mono', monospace" }}>
+          <h2 style={{ fontSize: 17, fontWeight: 700, marginBottom: 12, fontFamily: "'JetBrains Mono', monospace" }}>
             Side-by-Side Comparison
           </h2>
-          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 11, minWidth: 600 }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 14, minWidth: 600 }}>
             <thead>
               <tr>
                 {["", "Spanner", "Bigtable", "BigQuery", "Cloud SQL", "Firestore", "Memorystore"].map((h) => (
@@ -638,7 +638,7 @@ export default function GCPDatabaseCheatSheet() {
                       borderBottom: "2px solid #2a2a4a",
                       fontFamily: "'JetBrains Mono', monospace",
                       whiteSpace: "nowrap",
-                      fontSize: 10,
+                      fontSize: 13,
                     }}
                   >
                     {h}
@@ -663,11 +663,11 @@ export default function GCPDatabaseCheatSheet() {
                       key={j}
                       style={{
                         padding: "5px 8px",
-                        color: j === 0 ? "#64748b" : "#cbd5e1",
+                        color: j === 0 ? "#9ca3af" : "#d1d5db",
                         borderBottom: "1px solid #1a1a3e",
                         fontFamily: j === 0 ? "inherit" : "'JetBrains Mono', monospace",
                         fontWeight: j === 0 ? 600 : 400,
-                        fontSize: 10,
+                        fontSize: 13,
                         whiteSpace: "nowrap",
                       }}
                     >

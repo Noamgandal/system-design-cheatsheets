@@ -200,20 +200,20 @@ function StrategyCard({ s, isExpanded, onToggle }) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 12, marginBottom: 12 }}>
             <div>
               <div style={{ fontSize: 13, fontWeight: 700, color: "#22c55e", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>✓ Pros</div>
-              {s.pros.map((p, i) => <div key={i} style={{ fontSize: 14, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>• {p}</div>)}
+              {s.pros.map((p, i) => <div key={i} style={{ fontSize: 16, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>• {p}</div>)}
             </div>
             <div>
               <div style={{ fontSize: 13, fontWeight: 700, color: "#ef4444", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>✗ Cons</div>
-              {s.cons.map((c, i) => <div key={i} style={{ fontSize: 14, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>• {c}</div>)}
+              {s.cons.map((c, i) => <div key={i} style={{ fontSize: 16, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>• {c}</div>)}
             </div>
           </div>
           <div style={{ background: "#0f1c0f", borderRadius: 6, padding: "12px 14px", border: "1px solid #153b15", marginBottom: 12 }}>
             <div style={{ fontSize: 12, fontWeight: 700, color: "#22c55e", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>🎯 Best For</div>
-            <div style={{ fontSize: 14, color: "#86efac", lineHeight: 1.5 }}>{s.bestFor}</div>
+            <div style={{ fontSize: 16, color: "#86efac", lineHeight: 1.6 }}>{s.bestFor}</div>
           </div>
           <div style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px" }}>
             <div style={{ fontSize: 12, fontWeight: 700, color: "#fbbf24", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>Example</div>
-            <div style={{ fontSize: 14, color: "#cbd5e1", lineHeight: 1.5 }}>{s.example}</div>
+            <div style={{ fontSize: 16, color: "#cbd5e1", lineHeight: 1.6 }}>{s.example}</div>
           </div>
         </div>
       )}
@@ -236,7 +236,7 @@ function StampedeCard({ problem, isExpanded, onToggle }) {
         <div style={{ padding: "12px 14px" }}>
           {problem.solutions.map((sol, i) => (
             <div key={i} style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px", marginBottom: i < problem.solutions.length - 1 ? 12 : 0 }}>
-              <div style={{ fontSize: 15, fontWeight: 700, color: "#22c55e", marginBottom: 8 }}>{sol.name}</div>
+              <div style={{ fontSize: 17, fontWeight: 700, color: "#22c55e", marginBottom: 8 }}>{sol.name}</div>
               <div style={{ fontSize: 14, color: "#cbd5e1", marginBottom: 10, lineHeight: 1.5 }}>{sol.how}</div>
               <div style={{ background: "#1a1a2e", borderRadius: 6, padding: 12, marginBottom: 10, fontFamily: "'JetBrains Mono', monospace", fontSize: 13, color: "#94a3b8", whiteSpace: "pre-wrap", lineHeight: 1.6, overflowX: "auto", WebkitOverflowScrolling: "touch" }}>{sol.flow}</div>
               <div style={{ fontSize: 14, color: "#fbbf24" }}><strong>When:</strong> {sol.when}</div>
@@ -281,7 +281,7 @@ export default function CachingCheatSheet() {
               {layers.map((l, i) => (
                 <div key={i} style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px", marginBottom: i < layers.length - 1 ? 10 : 0 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6, flexWrap: "wrap", gap: 8 }}>
-                    <span style={{ fontSize: 15, fontWeight: 700, color: "#e2e8f0", fontFamily: "'JetBrains Mono', monospace" }}>{l.name}</span>
+                    <span style={{ fontSize: 17, fontWeight: 700, color: "#e2e8f0", fontFamily: "'JetBrains Mono', monospace" }}>{l.name}</span>
                     <span style={{ fontSize: 13, color: "#22c55e", fontFamily: "'JetBrains Mono', monospace" }}>{l.latency}</span>
                   </div>
                   <div style={{ fontSize: 14, color: "#64748b", marginBottom: 8 }}>{l.where}</div>
@@ -319,8 +319,8 @@ export default function CachingCheatSheet() {
               </div>
               {invalidation.map((inv, i) => (
                 <div key={i} style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px", marginBottom: i < invalidation.length - 1 ? 10 : 0 }}>
-                  <div style={{ fontSize: 15, fontWeight: 700, color: "#e2e8f0", marginBottom: 6 }}>{inv.name}</div>
-                  <div style={{ fontSize: 14, color: "#cbd5e1", marginBottom: 6 }}>{inv.how}</div>
+                  <div style={{ fontSize: 17, fontWeight: 700, color: "#e2e8f0", marginBottom: 6 }}>{inv.name}</div>
+                  <div style={{ fontSize: 16, color: "#cbd5e1", marginBottom: 6 }}>{inv.how}</div>
                   <div style={{ fontSize: 14, color: "#fbbf24", marginBottom: 6 }}>{inv.tradeoff}</div>
                   <div style={{ fontSize: 13, color: "#818cf8", fontFamily: "'JetBrains Mono', monospace", overflowX: "auto", WebkitOverflowScrolling: "touch" }}>{inv.example}</div>
                 </div>
@@ -371,10 +371,10 @@ export default function CachingCheatSheet() {
         {faqs.map((faq, i) => (
           <div key={i} style={{ background: "#1a1a2e", borderRadius: 10, border: "1px solid #2a2a4a", marginBottom: 10, overflow: "hidden" }}>
             <div onClick={toggle(setExpFaqs, i)} style={{ padding: "14px 16px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
-              <span style={{ fontSize: 15, fontWeight: 600, color: "#e2e8f0", flex: 1 }}>{faq.q}</span>
+              <span style={{ fontSize: 17, fontWeight: 600, color: "#e2e8f0", flex: 1 }}>{faq.q}</span>
               <span style={{ color: "#64748b", fontSize: 14, transform: expFaqs.has(i) ? "rotate(180deg)" : "", transition: "transform 0.2s", flexShrink: 0 }}>▼</span>
             </div>
-            {expFaqs.has(i) && <div style={{ padding: "0 16px 14px" }}><div style={{ fontSize: 14, color: "#94a3b8", lineHeight: 1.6 }}>{faq.a}</div></div>}
+            {expFaqs.has(i) && <div style={{ padding: "0 16px 14px" }}><div style={{ fontSize: 16, color: "#94a3b8", lineHeight: 1.7 }}>{faq.a}</div></div>}
           </div>
         ))}
       </div>

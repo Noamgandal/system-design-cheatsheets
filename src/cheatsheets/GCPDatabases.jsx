@@ -330,7 +330,7 @@ function DBCard({ db, isExpanded, onToggle }) {
               {db.type}
             </span>
           </div>
-          <div style={{ fontSize: 14, color: "#64748b", fontStyle: "italic" }}>{db.tagline}</div>
+          <div style={{ fontSize: 16, color: "#64748b", fontStyle: "italic" }}>{db.tagline}</div>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
           <div style={{ textAlign: "right", fontSize: 13 }}>
@@ -377,7 +377,7 @@ function DBCard({ db, isExpanded, onToggle }) {
                 <div style={{ fontSize: 11, color: "#64748b", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 4 }}>
                   {label}
                 </div>
-                <div style={{ fontSize: 14, color: "#cbd5e1", lineHeight: 1.4 }}>{value}</div>
+                <div style={{ fontSize: 16, color: "#cbd5e1", lineHeight: 1.6 }}>{value}</div>
               </div>
             ))}
           </div>
@@ -389,7 +389,7 @@ function DBCard({ db, isExpanded, onToggle }) {
                 ✓ Best for
               </div>
               {db.bestFor.map((item, i) => (
-                <div key={i} style={{ fontSize: 14, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>
+                <div key={i} style={{ fontSize: 16, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>
                   • {item}
                 </div>
               ))}
@@ -399,7 +399,7 @@ function DBCard({ db, isExpanded, onToggle }) {
                 ✗ Not for
               </div>
               {db.notFor.map((item, i) => (
-                <div key={i} style={{ fontSize: 14, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>
+                <div key={i} style={{ fontSize: 16, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>
                   • {item}
                 </div>
               ))}
@@ -411,7 +411,7 @@ function DBCard({ db, isExpanded, onToggle }) {
             <div style={{ fontSize: 12, fontWeight: 700, color: "#fbbf24", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
               🔑 Key / Schema Design
             </div>
-            <div style={{ fontSize: 14, color: "#cbd5e1", lineHeight: 1.5 }}>{db.keyDesign}</div>
+            <div style={{ fontSize: 16, color: "#cbd5e1", lineHeight: 1.6 }}>{db.keyDesign}</div>
           </div>
 
           {/* Row Example */}
@@ -470,7 +470,7 @@ function DBCard({ db, isExpanded, onToggle }) {
               ⚠️ Gotchas & Pitfalls
             </div>
             {db.gotchas.map((item, i) => (
-              <div key={i} style={{ fontSize: 14, color: "#fca5a5", marginBottom: 4 }}>
+              <div key={i} style={{ fontSize: 16, color: "#fca5a5", marginBottom: 4 }}>
                 • {item}
               </div>
             ))}
@@ -481,7 +481,7 @@ function DBCard({ db, isExpanded, onToggle }) {
             <div style={{ fontSize: 12, fontWeight: 700, color: "#22c55e", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>
               🎯 Interview Trigger
             </div>
-            <div style={{ fontSize: 14, color: "#86efac", lineHeight: 1.5, fontStyle: "italic" }}>{db.interviewTip}</div>
+            <div style={{ fontSize: 16, color: "#86efac", lineHeight: 1.6, fontStyle: "italic" }}>{db.interviewTip}</div>
           </div>
         </div>
       )}

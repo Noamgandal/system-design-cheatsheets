@@ -331,10 +331,10 @@ function ExpandableCard({ item }) {
     >
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
         <div style={{ flex: 1 }}>
-          <span style={{ color: "#a78bfa", fontWeight: 700, fontSize: 15, fontFamily: "'JetBrains Mono', monospace" }}>
+          <span style={{ color: "#a78bfa", fontWeight: 700, fontSize: 17, fontFamily: "'JetBrains Mono', monospace" }}>
             {item.term}
           </span>
-          <p style={{ color: "#c8c8e0", fontSize: 15, margin: "6px 0 0 0", lineHeight: 1.6 }}>
+          <p style={{ color: "#c8c8e0", fontSize: 17, margin: "6px 0 0 0", lineHeight: 1.7 }}>
             {item.detail}
           </p>
         </div>
@@ -348,14 +348,14 @@ function ExpandableCard({ item }) {
         <div style={{ marginTop: 10, paddingTop: 10, borderTop: "1px solid #252540" }}>
           {item.usage && (
             <div style={{ marginBottom: 6 }}>
-              <span style={{ color: "#4ade80", fontSize: 13, fontWeight: 600, textTransform: "uppercase", letterSpacing: 1 }}>When / Why</span>
-              <p style={{ color: "#a0a0c0", fontSize: 15, margin: "4px 0 0 0", lineHeight: 1.6 }}>{item.usage}</p>
+              <span style={{ color: "#4ade80", fontSize: 14, fontWeight: 600, textTransform: "uppercase", letterSpacing: 1 }}>When / Why</span>
+              <p style={{ color: "#a0a0c0", fontSize: 17, margin: "4px 0 0 0", lineHeight: 1.7 }}>{item.usage}</p>
             </div>
           )}
           {item.gotcha && (
             <div>
-              <span style={{ color: "#fbbf24", fontSize: 13, fontWeight: 600, textTransform: "uppercase", letterSpacing: 1 }}>Gotcha / Interview Tip</span>
-              <p style={{ color: "#a0a0c0", fontSize: 15, margin: "4px 0 0 0", lineHeight: 1.6 }}>{item.gotcha}</p>
+              <span style={{ color: "#fbbf24", fontSize: 14, fontWeight: 600, textTransform: "uppercase", letterSpacing: 1 }}>Gotcha / Interview Tip</span>
+              <p style={{ color: "#a0a0c0", fontSize: 17, margin: "4px 0 0 0", lineHeight: 1.7 }}>{item.gotcha}</p>
             </div>
           )}
         </div>
@@ -378,7 +378,7 @@ export default function ConsistencyCheatsheet() {
     }}>
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <h1 style={{
-          fontSize: 24,
+          fontSize: 26,
           fontWeight: 800,
           color: "#fff",
           margin: "0 0 4px 0",
@@ -386,7 +386,7 @@ export default function ConsistencyCheatsheet() {
         }}>
           🔒 Consistency & Coordination
         </h1>
-        <p style={{ color: "#666", fontSize: 14, margin: "0 0 20px 0" }}>
+        <p style={{ color: "#666", fontSize: 16, margin: "0 0 20px 0" }}>
           Google L6 System Design — CAP, Consensus, Locking, Leader Election, Interview Patterns
         </p>
 
@@ -407,8 +407,8 @@ export default function ConsistencyCheatsheet() {
                 color: activeSection === s.id ? "#a78bfa" : "#666",
                 border: activeSection === s.id ? "1px solid #a78bfa33" : "1px solid transparent",
                 borderRadius: 6,
-                padding: "8px 14px",
-                fontSize: 14,
+                padding: "10px 16px",
+                fontSize: 15,
                 fontWeight: 600,
                 cursor: "pointer",
                 transition: "all 0.2s",
@@ -423,7 +423,7 @@ export default function ConsistencyCheatsheet() {
         {current && current.subsections.map((sub, i) => (
           <div key={i} style={{ marginBottom: 28 }}>
             <h3 style={{
-              fontSize: 17,
+              fontSize: 19,
               fontWeight: 700,
               color: "#7878a0",
               margin: "0 0 12px 0",

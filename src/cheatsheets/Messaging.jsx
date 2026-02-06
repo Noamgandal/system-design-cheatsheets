@@ -289,7 +289,7 @@ function ServiceCard({ svc, isExpanded, onToggle }) {
             ].map(([label, value]) => (
               <div key={label} style={{ background: "#0f0f23", borderRadius: 6, padding: "10px 12px" }}>
                 <div style={{ fontSize: 11, color: "#64748b", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 4 }}>{label}</div>
-                <div style={{ fontSize: 14, color: "#cbd5e1", lineHeight: 1.4 }}>{value}</div>
+                <div style={{ fontSize: 16, color: "#cbd5e1", lineHeight: 1.6 }}>{value}</div>
               </div>
             ))}
           </div>
@@ -297,22 +297,22 @@ function ServiceCard({ svc, isExpanded, onToggle }) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 12, marginBottom: 16 }}>
             <div>
               <div style={{ fontSize: 13, fontWeight: 700, color: "#22c55e", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>✓ Best for</div>
-              {svc.bestFor.map((item, i) => (<div key={i} style={{ fontSize: 14, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>• {item}</div>))}
+              {svc.bestFor.map((item, i) => (<div key={i} style={{ fontSize: 16, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>• {item}</div>))}
             </div>
             <div>
               <div style={{ fontSize: 13, fontWeight: 700, color: "#ef4444", marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>✗ Not for</div>
-              {svc.notFor.map((item, i) => (<div key={i} style={{ fontSize: 14, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>• {item}</div>))}
+              {svc.notFor.map((item, i) => (<div key={i} style={{ fontSize: 16, color: "#94a3b8", marginBottom: 4, paddingLeft: 6 }}>• {item}</div>))}
             </div>
           </div>
 
           <div style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px", marginBottom: 12 }}>
             <div style={{ fontSize: 12, fontWeight: 700, color: "#fbbf24", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>📌 Key Details</div>
-            {svc.keyDetails.map((item, i) => (<div key={i} style={{ fontSize: 14, color: "#cbd5e1", marginBottom: 4, paddingLeft: 6 }}>• {item}</div>))}
+            {svc.keyDetails.map((item, i) => (<div key={i} style={{ fontSize: 16, color: "#cbd5e1", marginBottom: 4, paddingLeft: 6 }}>• {item}</div>))}
           </div>
 
           <div style={{ background: "#0f1c0f", borderRadius: 6, padding: "12px 14px", border: "1px solid #153b15" }}>
             <div style={{ fontSize: 12, fontWeight: 700, color: "#22c55e", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>🎯 Interview Trigger</div>
-            <div style={{ fontSize: 14, color: "#86efac", lineHeight: 1.5, fontStyle: "italic" }}>{svc.interviewTip}</div>
+            <div style={{ fontSize: 16, color: "#86efac", lineHeight: 1.6, fontStyle: "italic" }}>{svc.interviewTip}</div>
           </div>
         </div>
       )}
@@ -338,7 +338,7 @@ function PatternCard({ pattern, isExpanded, onToggle }) {
         <div style={{ padding: "12px 14px" }}>
           <div style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px", marginBottom: 12 }}>
             <div style={{ fontSize: 12, fontWeight: 700, color: "#818cf8", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>Solution</div>
-            <div style={{ fontSize: 14, color: "#cbd5e1", lineHeight: 1.5 }}>{pattern.solution}</div>
+            <div style={{ fontSize: 16, color: "#cbd5e1", lineHeight: 1.6 }}>{pattern.solution}</div>
           </div>
 
           <div style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px", marginBottom: 12 }}>
@@ -354,11 +354,11 @@ function PatternCard({ pattern, isExpanded, onToggle }) {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 10 }}>
             <div style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px" }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: "#fbbf24", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>When to use</div>
-              <div style={{ fontSize: 14, color: "#cbd5e1", lineHeight: 1.5 }}>{pattern.when}</div>
+              <div style={{ fontSize: 16, color: "#cbd5e1", lineHeight: 1.6 }}>{pattern.when}</div>
             </div>
             <div style={{ background: "#0f0f23", borderRadius: 6, padding: "12px 14px" }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: "#f97316", textTransform: "uppercase", letterSpacing: 0.5, marginBottom: 6 }}>Alternative</div>
-              <div style={{ fontSize: 14, color: "#cbd5e1", lineHeight: 1.5 }}>{pattern.alternative}</div>
+              <div style={{ fontSize: 16, color: "#cbd5e1", lineHeight: 1.6 }}>{pattern.alternative}</div>
             </div>
           </div>
         </div>
@@ -481,12 +481,12 @@ export default function MessagingCheatSheet() {
         {faqs.map((faq, i) => (
           <div key={i} style={{ background: "#1a1a2e", borderRadius: 10, border: "1px solid #2a2a4a", marginBottom: 10, overflow: "hidden" }}>
             <div onClick={() => toggleFaq(i)} style={{ padding: "14px 16px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
-              <span style={{ fontSize: 15, fontWeight: 600, color: "#e2e8f0", flex: 1 }}>{faq.q}</span>
+              <span style={{ fontSize: 17, fontWeight: 600, color: "#e2e8f0", flex: 1 }}>{faq.q}</span>
               <span style={{ color: "#64748b", fontSize: 14, transform: expandedFaqs.has(i) ? "rotate(180deg)" : "rotate(0)", transition: "transform 0.2s", flexShrink: 0 }}>▼</span>
             </div>
             {expandedFaqs.has(i) && (
               <div style={{ padding: "0 16px 14px" }}>
-                <div style={{ fontSize: 14, color: "#94a3b8", lineHeight: 1.6 }}>{faq.a}</div>
+                <div style={{ fontSize: 16, color: "#94a3b8", lineHeight: 1.7 }}>{faq.a}</div>
               </div>
             )}
           </div>

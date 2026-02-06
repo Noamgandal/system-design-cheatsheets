@@ -14,20 +14,21 @@ export default function App() {
         style={{
           background: "#1a1a2e",
           borderBottom: "1px solid #2a2a4a",
-          padding: "12px 24px",
+          padding: "10px 12px",
           display: "flex",
           alignItems: "center",
-          gap: 24,
+          gap: 12,
           position: "sticky",
           top: 0,
           zIndex: 100,
+          flexWrap: "wrap",
         }}
       >
         <span
           style={{
             fontFamily: "'JetBrains Mono', monospace",
             fontWeight: 700,
-            fontSize: 16,
+            fontSize: 15,
             color: "#818cf8",
             whiteSpace: "nowrap",
           }}
@@ -35,7 +36,7 @@ export default function App() {
           SD Prep
         </span>
 
-        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap", flex: 1 }}>
           {cheatsheets.map((sheet) => (
             <button
               key={sheet.id}
@@ -44,10 +45,10 @@ export default function App() {
                 background: activeId === sheet.id ? "#818cf8" : "#2a2a4a",
                 color: activeId === sheet.id ? "#0f0f23" : "#94a3b8",
                 border: "none",
-                padding: "6px 16px",
+                padding: "6px 12px",
                 borderRadius: 6,
                 cursor: "pointer",
-                fontSize: 13,
+                fontSize: 12,
                 fontWeight: activeId === sheet.id ? 700 : 400,
                 fontFamily: "'JetBrains Mono', monospace",
                 transition: "all 0.15s",

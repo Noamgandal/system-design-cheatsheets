@@ -1,16 +1,51 @@
-# React + Vite
+# SD Prep — System Design Cheatsheets
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Quick-reference cheat sheets for system design interviews. Mobile-friendly, dark theme, built with React + Vite.
 
-Currently, two official plugins are available:
+**Live site:** https://noamgandal.github.io/system-design-cheatsheets/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Cheat Sheets
 
-## React Compiler
+- **GCP Databases** — Spanner, Bigtable, BigQuery, Cloud SQL, Firestore, Memorystore
+  - Quick decision tree for picking the right database
+  - Data model, consistency, scaling, latency for each
+  - Best for / Not for use cases
+  - Key design tips and gotchas
+  - Side-by-side comparison table
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack
 
-## Expanding the ESLint configuration
+- React 18
+- Vite
+- GitHub Pages (via Actions)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+## Adding a New Cheat Sheet
+
+1. Create a new component in `src/cheatsheets/` (e.g., `AWSStorage.jsx`)
+2. Export it from `src/cheatsheets/index.js`:
+
+```js
+import AWSStorage from "./AWSStorage";
+
+export const cheatsheets = [
+  { id: "gcp-databases", label: "GCP Databases", component: GCPDatabaseCheatSheet },
+  { id: "aws-storage", label: "AWS Storage", component: AWSStorage },
+];
+```
+
+3. Push to `main` — GitHub Actions will auto-deploy
+
+## Deployment
+
+Automatic via GitHub Actions on push to `main`. See `.github/workflows/deploy.yml`.
+
+## License
+
+MIT

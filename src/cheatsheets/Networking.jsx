@@ -213,6 +213,35 @@ const sections = [
         ]
       },
       {
+        title: "Communication Patterns Comparison",
+        content: [
+          {
+            term: "Regular HTTP (Request-Response)",
+            detail: "Client sends request, server responds, connection closes. Next request may hit a different server. Covers 95% of use cases — APIs, web pages, forms, file uploads.",
+            usage: "Default for everything. Use L7 LB for routing.",
+            gotcha: "Server CANNOT push data to client unprompted. Client must ask first."
+          },
+          {
+            term: "Server-Sent Events (SSE)",
+            detail: "Server can push data to client over a long-lived HTTP connection. One-directional: server → client only. Client cannot send back on the same connection. Simpler than WebSocket — just HTTP with keep-alive.",
+            usage: "Live feeds, notifications, stock tickers, progress updates. Any case where server pushes but client doesn't need to send back.",
+            gotcha: "Simpler to implement than WebSocket. Works over standard HTTP (no upgrade). But one-directional only."
+          },
+          {
+            term: "Long Polling",
+            detail: "Client sends HTTP request, server holds it open until there's new data (or timeout), then responds. Client immediately sends another request. Simulates push over regular HTTP.",
+            usage: "Fallback when WebSocket/SSE aren't available. Works everywhere since it's just HTTP.",
+            gotcha: "Hacky. 99% of held connections return nothing. Higher latency than WebSocket/SSE. But universal compatibility."
+          },
+          {
+            term: "Decision Rule",
+            detail: "Does the server need to push data to the client without being asked? No → regular HTTP. Yes, server→client only → SSE. Yes, both directions → WebSocket.",
+            usage: "Interview: 'For the notification system I'd use SSE since it's server-to-client only. For chat I'd use WebSockets since both sides send messages.'",
+            gotcha: "Don't use WebSocket when SSE is enough — WebSocket is more complex to scale (stateful connections, Redis Pub/Sub for cross-server)."
+          }
+        ]
+      },
+      {
         title: "Scaling Pattern: Redis Pub/Sub",
         content: [
           {
@@ -258,7 +287,7 @@ const sections = [
           },
           {
             term: "Sticky Sessions — When Needed?",
-            detail: "For pure WebSocket: NOT needed. TCP connection naturally stays on one server once established.",
+            detail: "For pure WebSocket: NOT needed. The persistent TCP connection is inherently pinned to one server — that IS the stickiness. Sticky sessions (LB cookie/IP hash) are only for stateless HTTP when the server holds in-memory state across separate requests. WebSocket bypasses the need entirely.",
             usage: "Only needed when framework does multi-step HTTP handshake before upgrading to WebSocket (some libraries do this).",
             gotcha: "Interview answer: 'WebSocket connections are inherently persistent on one server. The scaling challenge is cross-server delivery, solved by Redis Pub/Sub.'"
           }
@@ -359,13 +388,13 @@ const sections = [
           },
           {
             term: "API Protocol?",
-            detail: "Public/external → REST. Internal high-throughput → gRPC. Real-time bidirectional → WebSocket.",
+            detail: "Public/external → REST. Internal high-throughput → gRPC. Real-time bidirectional → WebSocket. Real-time server→client only → SSE.",
             usage: "",
             gotcha: ""
           },
           {
             term: "Real-time Delivery?",
-            detail: "Cross-server relay → Redis Pub/Sub. Message persistence → Database. Async microservice events → Cloud Pub/Sub. Client push → WebSocket.",
+            detail: "Server pushes to client (one-way) → SSE. Bidirectional real-time → WebSocket. Cross-server relay → Redis Pub/Sub. Message persistence → Database. Async microservice events → Cloud Pub/Sub.",
             usage: "",
             gotcha: ""
           }

@@ -4,6 +4,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Fix flex item shrinking - prevents text overflow in flex containers */
+[style*="display: flex"] > * {
+  min-width: 0;
 }
 
 body {
@@ -23,5 +30,16 @@ body {
 @media (max-width: 480px) {
   html {
     font-size: 16px;
+  }
+
+  /* Allow tables to shrink below minWidth on mobile */
+  table {
+    min-width: unset !important;
+    font-size: 12px;
+  }
+
+  /* Tighter base font on mobile */
+  body {
+    font-size: 17px;
   }
 }

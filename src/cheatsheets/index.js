@@ -2,6 +2,7 @@ import GCPDatabases from "./GCPDatabases";
 import Messaging from "./Messaging";
 import Caching from "./Caching";
 import Networking from "./Networking";
+import Consistency from "./Consistency";
 
 export const cheatsheets = [
   {
@@ -23,5 +24,10 @@ export const cheatsheets = [
     id: "networking",
     label: "Networking",
     component: Networking,
+  },
+  {
+    id: "consistency",
+    label: "Consistency",
+    component: Consistency,
   },
 ];
